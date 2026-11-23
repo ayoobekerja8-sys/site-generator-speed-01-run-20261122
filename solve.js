@@ -839,9 +839,9 @@ function genNodes(nodes, scopeVar, out, counters) {
           out.push("}");
         } else {
           out.push(`if (!${cond}) {`);
-          genNodes(elseNodes, scopeVar, out, counters);
-          out.push("} else {");
           genNodes(thenNodes, scopeVar, out, counters);
+          out.push("} else {");
+          genNodes(elseNodes, scopeVar, out, counters);
           out.push("}");
         }
         break;
